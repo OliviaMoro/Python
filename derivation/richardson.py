@@ -7,21 +7,30 @@ Created on Tue Mar 24 02:32:29 2020
 
 from math import atan
 
-# extrapolation de taylor d'ordre 4 :
+
 def richardson4(h,x,func):
-  der = (8*func(x+h/4.)-8*func(x-h/4.)+func(x-h/2.)-func(x+h/2.))/(3*h)
-  return der
+    """
+        Evaluates the derivative of the 'func' function at x with a small
+        enough h using a fourth order Taylor's extrapolation
+    """
+    der = (8*func(x+h/4.)-8*func(x-h/4.)+func(x-h/2.)-func(x+h/2.))/(3*h)
+    return der
+
 
 def f(x):
-  return atan(2*x)
+    return atan(2*x)
 
-#exemple du cours avec log néperien
+
+
 def test():
-  h = 0.05
-  x = 1.5
-  der = richardson4(h,x,f)
-  print("der :", der, "exacte :", 2./(1+4.*x*x))
+    """
+        Above defined functions's test for the f function
+    """
+    h = 0.05
+    x = 1.5
+    der = richardson4(h,x,f)
+    print("der :", der, "exact :", 2./(1+4.*x*x))
 
 
 if __name__ == "__main__":
-  test()
+    test()

@@ -11,30 +11,34 @@ import newtonCotes as nc
 from numpy import sqrt
 import numpy as np
 
+
 def testIntegration():
     inf = 1
     sup = 5
     h = 0.05
-    # integration de sqrt(x) sur un exemple élémentaire
+    # Integration of sqrt 
     exact = 2/3.*(5**1.5 -1**1.5)
-    # valeur calculée avec integrate.quad
+    # value computed with integrate.quad
     resultQuad = integrate.quad(lambda x: sqrt(x), inf, sup)
-    # valeur calculée avec integrate.trapz
+    # value computed integrate.trapz
     x = np.linspace(inf, sup, int(abs(sup-inf)/h))
     y = np.sqrt(x)
     y_int = integrate.cumtrapz(y, x)
     
-    pointGauche = crude.pointGauche(inf,sup,h,sqrt)
-    pointDroit = crude.pointDroite(inf,sup,h,sqrt)
-    pointMilieu = crude.pointMileu(inf,sup,h,sqrt)
+    leftPoint = crude.leftPoint(inf,sup,h,sqrt)
+    rightPoint = crude.rightPoint(inf,sup,h,sqrt)
+    midPoint = crude.midPoint(inf,sup,h,sqrt)
     trapeze = crude.trapezes(inf,sup,h,sqrt)
     
     print("exact :",exact,"quad :",resultQuad,"cumtrapz :",y_int[-1])
-    print("pointGauche :",pointGauche,"pointDroit :",pointDroit)
-    print("trapeze :",trapeze,"pointMilieu :",pointMilieu)
+    print("leftPoint :",leftPoint,"rightPoint :",rightPoint)
+    print("trapeze :",trapeze,"midPoint :",midPoint)
+
 
 def newtonCotes(inf,sup,h,func):
-    # Test des algorithmes de nc
+    """
+        nc's algorithms's tests 
+    """
     nc1 = nc.trapeze(inf,sup,h,func)
     nc2 = nc.simpson_1_3(inf,sup,h,func)
     nc3 = nc.simpson_3_8(inf,sup,h,func)
@@ -42,7 +46,7 @@ def newtonCotes(inf,sup,h,func):
     print("trapeze :",nc1,"simpson 1/3 :", nc2)
     print("simpson 3/8 :",nc3,"villarceau :", nc4)
     
-    # Utilisation de integrate
+    # Use of integrate 
     somme = [0,0,0,0]
     x = inf
     N = int(abs(sup-inf)/h)

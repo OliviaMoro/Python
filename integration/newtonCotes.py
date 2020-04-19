@@ -7,6 +7,10 @@ Created on Tue Mar 24 05:09:08 2020
 
 
 def trapeze(inf,sup,h,func):
+    """
+        Trapezes's method used to estimate the 'func' function's integral
+        between 'inf' and 'sup' with the step 'h'
+    """
     n = int(abs(sup-inf)/h)
     somme = 0
 
@@ -17,7 +21,12 @@ def trapeze(inf,sup,h,func):
         
     return somme
 
-def simpson_1_3(inf,sup,h,func) :
+
+def simpson_1_3(inf,sup,h,func):
+    """
+        Newton-Cotes's method for n=2 used to estimate the 'func' function's 
+        integral between 'inf' and 'sup' with the step 'h'
+    """
     n = int(abs(sup-inf)/h)
     somme = 0
 
@@ -29,7 +38,11 @@ def simpson_1_3(inf,sup,h,func) :
     return somme
     
     
-def simpson_3_8(inf,sup,h,func) :
+def simpson_3_8(inf,sup,h,func):
+    """
+        Newton-Cotes's method for n=3 used to estimate the 'func' function's 
+        integral between 'inf' and 'sup' with the step 'h'
+    """
     n = int(abs(sup-inf)/h)
     somme = 0
 
@@ -40,7 +53,12 @@ def simpson_3_8(inf,sup,h,func) :
         
     return somme
 
+
 def villarceau(inf,sup,h,func):
+    """
+        Newton-Cotes's method for n=4 used to estimate the 'func' function's 
+        integral between 'inf' and 'sup' with the step 'h'
+    """
     n = int(abs(sup-inf)/h)
     somme = 0
 
