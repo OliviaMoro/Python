@@ -9,8 +9,8 @@ from math import isclose, log, floor
 
 def minIteration(a,b,tol):
     """
-        Calcule le nombre d'itération nécessaires pour que la dichotomie
-        converge vers une solution
+        Computes the iterations number needed for the dichotomy to 
+        converge to a solution.
     """
     n = log((b-a)/(2*tol))/log(2)
     return floor(n)
@@ -19,25 +19,25 @@ def minIteration(a,b,tol):
 
 def bissection(a,b,f,tol):
     """
-        Recherche de zeros d'une fonction f à une variable
-        sur l'intervalle [a,b] avec une tolérance tol
+        Search for the f function's zeros between a and b with a tolerance
+        tol.
     """   
     i = 0
     n = minIteration(a,b,tol)
-    # On découpe l'intervalle en deux    
+    # The interval is cut in two
     x0 = (b+a)/2.
     
     for i in range(0,n):
         i += 1
         x0 = (b+a)/2.
         
-        # la racine est dans [a,x0]
+        # root is in [a,x0] : the sign changed 
         if (f(a)*f(x0) < 0 ):
             b = x0
-        # la racine est dans [x0,b]    
+        # root is in [x0,b] : sign unchanged  
         elif (f(a)*f(x0) > 0):
             a = x0
-        # on a trouver la racine
+        # root finded 
         elif (isclose(f(a)*f(x0),0,rel_tol=tol, abs_tol=0.0)):
             break
 

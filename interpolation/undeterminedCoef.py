@@ -11,8 +11,8 @@ import numpy as np
 def getCoef(a,f):
     """
         computes coefficients of the polynomial interpolation of a dataset :
-            - a : points
-            - f : values
+            - a : points (array)
+            - f : values (array)
         a and f must have the same length
     """
     try:

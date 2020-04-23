@@ -10,10 +10,10 @@ from math import isclose
 
 def newtonRaphson(xi,tol,f,derf,nMax=20):
     """
-        Cherche les racines d'une fonction f autour d'une valeur xi proche 
-        de celle ci avec une tolérence tol
-        f : fonction d'une variable réelle
-        derf : fonction dérivée de f
+        Looks for the roots of a function f around a close xi value 
+        with a tolerance tol :
+            - f : function of a real variable
+            - derf : function derived from f
     """
     delta = 1
     i = 0

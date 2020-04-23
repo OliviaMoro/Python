@@ -8,8 +8,8 @@ import numpy as np
 
 def polynome(x,x0,f):
     """
-        Approximates Lagrange polynome for the values 'f' at the given 
-        points 'x0' at x 
+        Estimates the Lagrange polynomial for the values 'f' at the given
+        points 'x0' at x values with Neville algorithm.
     """
     try:
         assert(len(x0)==len(f))

@@ -9,6 +9,10 @@ from scipy.special import binom
 
 
 def bernstein(u,n,i):
+    """
+        Computes Bernstein polynomial for each u's value for the given n 
+        and i.
+    """
     b = np.zeros(len(u))    
 
     for j in range(0,len(u)):
@@ -19,6 +23,10 @@ def bernstein(u,n,i):
 
 
 def curve(u,xPoints,yPoints):
+    """
+        Computes the Bezier curve from the (xPoints,yPoints) points at 
+        u's values.
+    """
     n = len(xPoints)-1
     x = np.zeros(len(u))
     y = np.zeros(len(u))

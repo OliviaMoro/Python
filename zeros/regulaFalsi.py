@@ -8,6 +8,10 @@ Created on Fri Apr 17 19:16:59 2020
 from math import isclose
 
 def intersect(xg,xd,f):
+    """
+        Returns the abscissa where the (G,D) rope cut the x-axis. G = (xg,yg)
+        and D = (xd,yd).
+    """
     yg = f(xg)
     yd = f(xd)
     xm = xd-yd*(xd-xg)/(yd-yg)
@@ -16,8 +20,8 @@ def intersect(xg,xd,f):
 
 def regulaFalsi(a,b,f,tol,nMax):
     """
-        Recherche de zeros d'une fonction f à une variable
-        sur l'intervalle [a,b] avec une tolérance tol
+        Search for the f function's zeros between a and b with a tolerance
+        tol. nMax is the maximum number of step.
     """    
     i = 0
     xm = intersect(a,b,f)

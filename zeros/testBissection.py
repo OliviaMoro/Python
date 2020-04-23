@@ -37,8 +37,8 @@ if __name__ == "__main__":
     Graph2D(x1,[f1]).show()
     Graph2D(x2,[f2]).show()
     
-    racine1 = bissection(-2,2,test1,tol)
-    racine2 = bissection(-2,0,test2,tol)
-    print("racine1 : {}, racine2 : {}".format(racine1,racine2))
+    root1 = bissection(-2,2,test1,tol)
+    root2 = bissection(-2,0,test2,tol)
+    print("root1 : {}, root2 : {}".format(root1,root2))
     
     

@@ -32,28 +32,28 @@ def exo1():
     n = 20
     a = 0
     b = 1
-    # with bissection method
+    # with the bissection method
     xa = bissection(a,b,f,tol)
     print("Bissection : x* = {}".format(xa))
     
-    # with regulaFalsi method
+    # with the regulaFalsi method
     xb = regulaFalsi(a,b,f,tol,n)
     print("Regula Falsi : x* = {}".format(xb))
     
-    # with NewtonRaphson method
+    # with the NewtonRaphson method
     xc = newtonRaphson(b,tol,f,derf)
     print("Newton Raphson : x* = {}".format(xc))
     
-    # with fixed point method
+    # with the fixed point method
     xd,x,y = iterations(g,0,tol,n)
     xf = np.linspace(a,b,50)
     yf = [g(x) for x in xf]
     print("Fixed Points : x* = {}".format(xd))
     legend = ['x','f','iteration']
     graph = Graph2D([xf,xf,x],[xf,yf,y],'x','f(x)','f(x)=x',legend)
-    #graph.show()
+    graph.show()
     
-    # with secant method
+    # with the secant method
     xe = secant(a,b,f,tol,n)
     print("Secant : x* = {}".format(xe))
 

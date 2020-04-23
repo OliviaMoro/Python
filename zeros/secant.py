@@ -9,6 +9,10 @@ from math import isclose
 
 
 def intersect(xg,xd,f):
+    """
+        Returns the abscissa where the (G,D) rope cut the x-axis. G = (xg,yg)
+        and D = (xd,yd).
+    """
     yg = f(xg)
     yd = f(xd)
     xm = xd-yd*(xd-xg)/(yd-yg)
@@ -16,6 +20,10 @@ def intersect(xg,xd,f):
 
 
 def secant(x0,x1,f,tol,nMax):
+    """
+        Search for the f function's zeros with a tolerance tol. nMax is the
+        maximum number of step. x0 and x1 are the starting points.
+    """
     i = 0
     x = [x0,x1]
     xm = x1

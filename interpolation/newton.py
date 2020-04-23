@@ -9,9 +9,10 @@ import numpy as np
 
 def diviseDifferences(x0,f):
     """
-        computes the newton polynom differences f[x0,...,xn] of a function f 
-        at the given points x0, the order is deduced from the length of x0 
-        and f (which are the same) :
+        Computes the newton polynomial's coefficients with the divided 
+        differences f[x0,...,xn] of a function f with the given points x0.
+        The order is deduced from the length of x0 and f (which are the 
+        same) :
             - x0 : array of values
             - f : array of values
     """
@@ -32,11 +33,12 @@ def diviseDifferences(x0,f):
 
 def lateralDifferences(x0,f):
     """
-        computes newton polynom coefficients given by the ascendant lateral
-        differences method :
+        Computes the newton polynomial's coefficients with the lateral 
+        differences f[x0,...,xn] of a function f with the given points x0.
+        The order is deduced from the length of x0 and f (which are the 
+        same) :
             - x0 : array of values
-            - f : array of values
-        Usefull for x0 of evenly spaced values
+            - f : array of valuess
     """
     finite = diviseDifferences(x0,f)
     diff = np.zeros(len(finite))
@@ -57,9 +59,10 @@ def lateralDifferences(x0,f):
 
 def pDivise(x,x0,f):
     """
-        computes the interpoling newton polynom for the set of points x with
-        the interpoling points x0 of value f using the divised differences 
-        method :
+        Computes the newton polynomial at x's value(s) for the function 
+        f at the x0 pivots using the divided differences's method. 
+        Interpolates f on x0 points :
+            - x : array or value
             - x0 : array of values
             - f : array of values
     """
@@ -82,9 +85,10 @@ def pDivise(x,x0,f):
 
 def pLateral(x,x0,f):
     """
-        computes the interpoling newton polynom for the set of points x with
-        the interpoling points x0 of value f using the lateral differences
-        method :
+        Computes the newton polynomial at x's value(s) for the function 
+        f at the x0 pivots using the lateral differences's method. 
+        Interpolates f on x0 points :
+            - x : array or value
             - x0 : array of values
             - f : array of values
     """
@@ -109,8 +113,7 @@ def pLateral(x,x0,f):
 
 def diviseTable(x0,f):
     """
-        computes every divised differences for a given dataset f
-    
+        Computes every divised differences for a given f at the x0 pivots.
     """
     n = len(x0)
     tmp = f
@@ -132,8 +135,7 @@ def diviseTable(x0,f):
 
 def lateralTable(f):
     """
-        computes every lateral differences for a given dataset f
-    
+        Computes every lateral differences for a given f.
     """
     diff = [f]
     #print(len(diff[0]))
@@ -153,6 +155,10 @@ def lateralTable(f):
 
     
 def printTable(x0,table):
+    """
+        Displays all differences computed to form a table with the x0 
+        pivots.
+    """
     n = len(x0)
 
     head = ['i','xi     ','fi    ']
@@ -169,7 +175,7 @@ def printTable(x0,table):
         line = [' ',blank,blank]
         lines.append(line)
         
-    # iteration over the difference order k   
+    # iteration over the difference's order k   
     for k in range(1,n):
         j = 0
         i = 0

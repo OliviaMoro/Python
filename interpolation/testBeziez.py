@@ -14,6 +14,7 @@ from plotMethods import Graph2D
 
 
 def test():
+    # Plot of a Bezier curve :
     xPoints = np.array([0,2,4,6])
     yPoints = np.array([1,4,1,4])
     u = np.linspace(0,1,50)
@@ -21,7 +22,7 @@ def test():
     print("P0 : ({},{})".format(x[0],y[0]))
     print("P3 : ({},{})".format(x[-1],y[-1]))
     
-    graph = Graph2D([xPoints,x],[yPoints,y],'x','y','test Bézier',['points','courbe'])
+    graph = Graph2D([xPoints,x],[yPoints,y],'x','y','Bézier curve',['points','curve'])
     graph.show()
     
     

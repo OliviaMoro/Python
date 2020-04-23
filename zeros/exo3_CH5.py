@@ -7,7 +7,7 @@ Created on Sat Apr 18 01:57:47 2020
 from math import tan, cos, sin
 from bissection import bissection
 from newtonRaphson import newtonRaphson
-
+from fixedPoint import iterations
 
 import numpy as np
 import sys, os
@@ -28,7 +28,7 @@ def exo3():
     
     x = np.linspace(a,b,50)
     y = np.divide(1,np.tan(x))
-    Graph2D(x,[x,y],'x','f(x)','Point fixe ?',['y = x','cotan(x)']).show()
+    Graph2D(x,[x,y],'x','f(x)','Fixed point ?',['y = x','cotan(x)']).show()
     
     # question b
     xb = bissection(a,b,f,tol)

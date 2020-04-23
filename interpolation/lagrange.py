@@ -10,6 +10,9 @@ from scipy.special import factorial
 
 
 def product(x,pivot,index):
+    """
+        Computes a Lagrange polynomial li(x) with the x0 pivots.
+    """
     try:
         assert(index >= 0 and index < len(pivot))
     except AssertionError:
@@ -26,8 +29,8 @@ def product(x,pivot,index):
 
 def polynome(x,pivot,values):
     """
-        Compute Lagrange polynome for the values 'values' at the given 
-        points 'pivot' at x 
+        Computes Lagrange polynomial for the values 'values' at the given
+        points 'pivot' at x. 
     """
     try:
         assert(len(pivot)==len(values))
@@ -43,6 +46,10 @@ def polynome(x,pivot,values):
 
 
 def formPolynome(X,pivot,values):
+    """
+        Computes Lagrange polynomial at each X's value with the (pivot,values)
+        pivots.
+    """
     P = np.array([])
     
     for i in range(0,len(X)):
@@ -56,14 +63,14 @@ def polynomeWeight(x,pivot,values):
     weight = np.array([1])
     facteur = factorial(n)
     
-    # Calcul des poids
+    # Weight computation
     for i in range(1,n):
         weight = np.append(weight,weight[-1]/(i*(n-1)))
     weight = [weight[i]*facteur for i in range(1,n)]
     weight = np.concatenate(([0],weight),axis = None)
     
     
-    # Calcul du polynome de Lagrange
+    # Lagrange polynomial computation
     num = np.zeros(len(x))
     den = np.zeros(len(x))   
     
@@ -77,19 +84,19 @@ def polynomeWeight(x,pivot,values):
 
 
 if __name__ == "__main__":
-#    print("Exercice 2 :")
+#    print("Exercise 2 :")
 #    x = 5000
 #    pivot = np.array([4861,5896])
 #    values = np.array([1.6062,1.5923])
 #    n = polynome(x,pivot,values)
-#    print("a) indice de réfraction a 5000 A : {}".format(n))
+#    print("a) Refractive index at 5000 A : {}".format(n))
 #    
 #    pivot = np.array([4358,4861,5896])
 #    values = np.array([1.6174,1.6062,1.5923])
 #    n = polynome(x,pivot,values)
-#    print("b) indice de réfraction a 5000 A : {}".format(n))
+#    print("b) Refractive index at 5000 A : {}".format(n))
     
-#    print("Exercice 4:")
+#    print("Exercise 4:")
 #    pivot = np.array([0,3,1])
 #    values = np.array([1,2,3])
 #    p2 = polynome(2,pivot,values)
