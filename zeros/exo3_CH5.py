@@ -24,7 +24,7 @@ def exo3():
         return 1/tan(x) -x
     
     def derf(x):
-        return 1/tan(x)**2
+        return -1/sin(x)**2 -1
     
     x = np.linspace(a,b,50)
     y = np.divide(1,np.tan(x))

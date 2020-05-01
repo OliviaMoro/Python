@@ -27,7 +27,7 @@ def regulaFalsi(a,b,f,tol,nMax):
     xm = intersect(a,b,f)
 
     
-    while(not isclose(f(xm),0,rel_tol=tol, abs_tol=0.0) and i<=nMax):  
+    while(not isclose(f(xm),0,rel_tol=tol, abs_tol=tol) and i<=nMax):  
         
         # root is in [a,xm] : the sign changed
         if (f(a)*f(xm) < 0 ):
@@ -36,7 +36,7 @@ def regulaFalsi(a,b,f,tol,nMax):
         elif (f(a)*f(xm) > 0):
             a = xm
         # root finded with fairly good precision
-        elif (isclose(f(xm),0,rel_tol=tol, abs_tol=0.0)):
+        elif (isclose(f(xm),0,rel_tol=tol, abs_tol=tol)):
             break
         
         i += 1

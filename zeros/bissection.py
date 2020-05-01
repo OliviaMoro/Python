@@ -24,11 +24,11 @@ def bissection(a,b,f,tol):
     """   
     i = 0
     n = minIteration(a,b,tol)
-    # The interval is cut in two
     x0 = (b+a)/2.
     
-    for i in range(0,n):
+    while (not isclose(f(x0),0,rel_tol=tol, abs_tol=tol) and i <= n):
         i += 1
+        # The interval is cut in two
         x0 = (b+a)/2.
         
         # root is in [a,x0] : the sign changed 
@@ -37,10 +37,7 @@ def bissection(a,b,f,tol):
         # root is in [x0,b] : sign unchanged  
         elif (f(a)*f(x0) > 0):
             a = x0
-        # root finded 
-        elif (isclose(f(a)*f(x0),0,rel_tol=tol, abs_tol=0.0)):
-            break
-
+            
 
     print("[a,b] = [{},{}], i = {}".format(a,b,i))
             

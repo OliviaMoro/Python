@@ -28,10 +28,12 @@ def secant(x0,x1,f,tol,nMax):
     x = [x0,x1]
     xm = x1
     
-    while(not isclose(f(xm),0,rel_tol=tol, abs_tol=0.0) and i <= nMax):
+    while(not isclose(f(xm),0,rel_tol=tol, abs_tol=tol) and i <= nMax):
         xm = intersect(x[0],x[1],f)
         x = [x[1],xm]
         i += 1
+        
+    print("i secant : {}".format(i))
     
     return xm
         
