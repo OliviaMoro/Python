@@ -2,3 +2,4 @@ functionApproximation/exo6.py
 functionApproximation/riemann.py
 functionApproximation/wallis.py
 integration/romberg.py
+zeros/exo_CH5.py
