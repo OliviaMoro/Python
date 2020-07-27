@@ -3,3 +3,15 @@ functionApproximation/riemann.py
 functionApproximation/wallis.py
 integration/romberg.py
 zeros/exo_CH5.py
+EDP/splitting.py
+EDP/exo2.py
+EDP/exo7.py
+probabilitiesAndErrors/exoCH14.py
+monteCarlo/isingModel.py
+monteCarlo/exoCH15.py
+monteCarlo/matplotlib_histo.py
+initialConditionsAndEigenvaluesProblems/exoCH12.py
+crossSection/
+diag/exo_CH10.py
+EMField/
+fourier/
